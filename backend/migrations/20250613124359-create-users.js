@@ -31,6 +31,10 @@ module.exports = {
       alamat: {
         type: Sequelize.TEXT
       },
+      no_hp: {
+        type: Sequelize.STRING(20),
+        allowNull: true
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE,

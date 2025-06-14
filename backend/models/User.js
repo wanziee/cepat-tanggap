@@ -39,6 +39,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     alamat: {
       type: DataTypes.TEXT
+    },
+    no_hp: {
+      type: DataTypes.STRING(20),
+      allowNull: true,
+      field: 'no_hp'
     }
   }, {
     sequelize,
@@ -46,6 +51,11 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'users',
     timestamps: true,
     underscored: true,
+    defaultScope: {
+      attributes: {
+        exclude: ['password']
+      }
+    },
     hooks: {
       beforeCreate: async (user) => {
         if (user.password) {

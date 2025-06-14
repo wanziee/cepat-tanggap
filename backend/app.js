@@ -48,6 +48,7 @@ app.use((err, req, res, next) => {
 
 // 404 handler
 app.use((req, res) => {
+  console.log('404 handler triggered for:', req.method, req.originalUrl);
   res.status(404).json({ message: 'Endpoint tidak ditemukan' });
 });
 
